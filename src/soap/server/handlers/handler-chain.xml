@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- MJS 5.18 - Server Side Handler Chain for DWPmv30SoapHandlers test project -->
+<handler-chains xmlns="http://java.sun.com/xml/ns/javaee" 
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+                xsi:schemaLocation="http://java.sun.com/xml/ns/javaee">
+  <handler-chain>
+    <!-- Server side handlers - SOAP first -->
+    <!-- Note that this is the order on the incoming side -->
+    <handler>
+      <handler-name>TimeoutHandler</handler-name>
+      <handler-class>soap.server.handlers.TimeoutHandler</handler-class>
+    </handler>
+   	<handler>
+      <handler-name>MethodNameHandler</handler-name>
+      <handler-class>soap.server.handlers.MethodNameHandler</handler-class>
+    </handler>
+    <!-- Server side handlers - logical handlers -->    
+    <handler>
+      <handler-name>MarriageHandler</handler-name>
+      <handler-class>soap.server.handlers.MarriageHandler</handler-class>
+    </handler>
+  </handler-chain>
+</handler-chains>
